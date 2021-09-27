@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Anna University</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="mca">MCA</string>
+    <string name="msc">MSC</string>
+    <string name="mba">MBA</string>
+    <string name="eng">Engineering</string>
+</resources>

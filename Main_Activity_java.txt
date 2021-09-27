@@ -1,0 +1,52 @@
+package com.example.formcontrols_ex_06;
+
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.RadioButton;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+public class MainActivity extends AppCompatActivity {
+
+    RadioButton mca, msc, mba, eng;
+    String selectedSuperStar;
+    Button submit;
+    TextView textView;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        mca = (RadioButton)findViewById(R.id.mca);
+        mba = (RadioButton) findViewById(R.id.mba);
+        msc = (RadioButton) findViewById(R.id.msc);
+        eng = (RadioButton) findViewById(R.id.eng);
+
+        submit = (Button) findViewById(R.id.submitButton);
+        textView = (TextView) findViewById(R.id.textView);
+
+        submit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (mca.isChecked()) {
+                    selectedSuperStar = mca.getText().toString();
+                } else if (msc.isChecked()) {
+                    selectedSuperStar = msc.getText().toString();
+                } else if (mba.isChecked()) {
+                    selectedSuperStar = mba.getText().toString();
+                } else if (eng.isChecked()) {
+                    selectedSuperStar = eng.getText().toString();
+                }
+
+                textView.setText("Your Selected Course is " + selectedSuperStar.toString());
+
+
+
+                //Toast.makeText(getApplicationContext(), selectedSuperStar, Toast.LENGTH_LONG).show(); // print the value of selected super star
+            }
+        });
+    }
+}
